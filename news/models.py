@@ -10,10 +10,20 @@ class Articles(models.Model):
     def __str__(self):
         return self.title
 
-
     def get_absolut_url(self):
         return f'/news/{self.id}'
 
     class Meta:
         verbose_name = 'Новость'
         verbose_name_plural = 'Новости'
+
+class Type(models.Model):
+    name = models.CharField(max_length=25)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Типы'
+        verbose_name_plural = 'Типы'
+
